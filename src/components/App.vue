@@ -19,13 +19,13 @@
 <script>
     import CalendarDay from './CalendarDay.vue';
     export default {
-       data(){
-           return {
-              month: 1,
-              year: 2019,
-           }
-       },
        computed:{
+            month(){
+                return this.$store.state.currentMonth;
+            },
+            year(){
+                return this.$store.state.currentYear;
+            },
             days(){
                 let days = [];
                 let currentDay = this.$moment(`${this.year}-${this.month}-1`, 'YYYY-M-D');
